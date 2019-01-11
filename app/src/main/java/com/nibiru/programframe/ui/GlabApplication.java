@@ -10,7 +10,6 @@ import x.core.GlobalApplication;
  * 描述:
  */
 public class GlabApplication extends GlobalApplication {
-    private static final String TAG = "GlabApplication";
 
     @Override
     public void onCreate() {

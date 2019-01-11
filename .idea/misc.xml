@@ -44,6 +44,28 @@
     <option name="id" value="Android" />
   </component>
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$/EngineLib">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="svn://121.40.20.229/Nibiru_Studio/NibiruLauncher_NibiruVisionLauncher" />
+                  <option value="svn://121.40.20.229/Nibiru_Studio/branches" />
+                  <option value="svn://121.40.20.229/Nibiru_Studio/libs" />
+                  <option value="svn://121.40.20.229/Nibiru_Studio/src" />
+                  <option value="svn://121.40.20.229/Nibiru_Studio/svn:" />
+                  <option value="svn://121.40.20.229/Nibiru_Studio/tags" />
+                  <option value="svn://121.40.20.229/Nibiru_Studio/treasurehunt" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="svn://121.40.20.229/Nibiru_Studio/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="masterDetails">
