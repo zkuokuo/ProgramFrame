@@ -1,5 +1,14 @@
 package com.nibiru.programframe.ui.base;
 
+import android.util.Log;
+
+import com.nibiru.programframe.dag.component.DaggerSceneComponent;
+import com.nibiru.programframe.dag.component.SceneComponent;
+import com.nibiru.programframe.ui.scenes.MyApplication;
+import com.nibiru.programframe.utils.NetworkUtils;
+
+import javax.inject.Inject;
+
 import x.core.ui.XBaseScene;
 
 /**
@@ -9,11 +18,17 @@ import x.core.ui.XBaseScene;
  * 描述:
  */
 
-public abstract class BaseScene extends XBaseScene {
+public abstract class BaseScene<P extends BaseContract.Presenter> extends XBaseScene implements BaseContract.Scene {
+    @Inject
+    protected P presenter;
+
+    protected SceneComponent mSceneComponent;
 
     @Override
     public void onCreate() {
-
+        mSceneComponent = DaggerSceneComponent.builder()
+                .applicationComponent(((MyApplication) getGlobalApplication()).getApplicationComponent())
+                .build();
     }
 
     @Override
@@ -28,6 +43,18 @@ public abstract class BaseScene extends XBaseScene {
 
     @Override
     public void onDestroy() {
+        if (presenter != null) {
+            presenter.detachScene();
+        }
+    }
 
+    @Override
+    public boolean isNetworkConnected() {
+        return NetworkUtils.isNetworkAvailable(this);
+    }
+
+    @Override
+    public void showError(String message) {
+        Log.e(getClass().getName(), message);
     }
 }

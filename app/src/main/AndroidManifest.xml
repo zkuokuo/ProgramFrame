@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
           package="com.nibiru.programframe">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".ui.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        tools:replace="android:name">
+        android:supportsRtl="true">
         <meta-data
             android:name="LauncherScene"
-            android:value="com.nibiru.programframe.ui.scenes.MainScene"/>
+            android:value="com.nibiru.programframe.ui.scenes.main.MainScene"/>
 
         <meta-data
             android:name="GlobalApplication"
-            android:value="com.nibiru.programframe.ui.GlabApplication"/>
+            android:value="com.nibiru.programframe.ui.scenes.MyApplication"/>
 
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.scenes.MainActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|keyboard|locale|layoutDirection"
             android:launchMode="singleInstance"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <category android:name="com.nibiru.intent.category.NVR"/>
