@@ -1,1 +1,1 @@
-include ':app', ':EngineLib'
+include ':app', ':EngineLib', ':dagger2demo'
