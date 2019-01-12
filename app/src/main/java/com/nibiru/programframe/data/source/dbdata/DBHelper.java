@@ -11,11 +11,15 @@ import javax.inject.Singleton;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+/**
+ * 使用的时候需要注意,realm在哪个线程中创建就需要在哪个线程中使用,否则会报错误
+ */
 @Singleton
-public class DatabaseHelper {
+public class DBHelper {
     private Realm realm = Realm.getDefaultInstance();
+
     @Inject
-    public DatabaseHelper() {
+    public DBHelper() {
     }
 
     public void saveSearchHistory(String keyword) {

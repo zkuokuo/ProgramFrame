@@ -6,8 +6,11 @@ import com.nibiru.programframe.data.model.Banner;
 import com.nibiru.programframe.data.model.BaseResponse;
 import com.nibiru.programframe.data.source.DataManager;
 import com.nibiru.programframe.ui.base.BasePresenter;
+
 import java.util.List;
+
 import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -32,11 +35,11 @@ public class MainPresenter extends BasePresenter<MainContract.NewScene> implemen
         this.mDataManager = dataManager;
     }
 
-
     @Override
     public void detachScene() {
         super.detachScene();
         if (mDisposable != null) {
+            //取消请求
             mDisposable.dispose();
         }
     }
@@ -72,7 +75,6 @@ public class MainPresenter extends BasePresenter<MainContract.NewScene> implemen
 
             @Override
             public void onComplete() {
-
             }
         });
     }
@@ -110,4 +112,5 @@ public class MainPresenter extends BasePresenter<MainContract.NewScene> implemen
             }
         });
     }
+
 }

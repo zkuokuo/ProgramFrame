@@ -17,11 +17,9 @@ import x.core.ui.XBaseScene;
  * 时间:2019/1/11
  * 描述:
  */
-
 public abstract class BaseScene<P extends BaseContract.Presenter> extends XBaseScene implements BaseContract.Scene {
     @Inject
     protected P presenter;
-
     protected SceneComponent mSceneComponent;
 
     @Override
@@ -55,6 +53,6 @@ public abstract class BaseScene<P extends BaseContract.Presenter> extends XBaseS
 
     @Override
     public void showError(String message) {
-        Log.e(getClass().getName(), message);
+        Log.d("zkk", message);
     }
 }

@@ -71,6 +71,7 @@ public class MainScene extends BaseScene<MainPresenter> implements MainContract.
 
     @Override
     public boolean onGazeTrigger(XActor xActor) {
+
         String name = xActor.getName();
         if (name.equals("showArticles")) {
             presenter.getArticles(1);

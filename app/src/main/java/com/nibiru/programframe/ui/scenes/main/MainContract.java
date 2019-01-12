@@ -15,11 +15,14 @@ import java.util.List;
 public class MainContract {
     interface NewScene extends BaseContract.Scene {
         void showArticles(int page, List<Article> data);
+
         void showBannerData(List<Banner> data);
     }
 
     interface NewPresenter extends BaseContract.Presenter<NewScene> {
         void getArticles(int page);
+
         void getBannerData();
+
     }
 }

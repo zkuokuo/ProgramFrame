@@ -9,8 +9,8 @@ import com.nibiru.programframe.data.model.LoginResponse;
 import com.nibiru.programframe.data.model.NavCategory;
 import com.nibiru.programframe.data.model.SearchHistory;
 import com.nibiru.programframe.data.model.User;
-import com.nibiru.programframe.data.source.dbdata.DatabaseHelper;
-import com.nibiru.programframe.data.source.netdata.WanAndroidService;
+import com.nibiru.programframe.data.source.dbdata.DBHelper;
+import com.nibiru.programframe.data.source.netdata.ApiService;
 
 import java.util.List;
 
@@ -21,85 +21,85 @@ import io.reactivex.Observable;
 
 @Singleton
 public class DataManager {
-    private WanAndroidService wanAndroidService;
-    private DatabaseHelper databaseHelper;
+    private ApiService mApiService;
+    private DBHelper mDBHelper;
 
     @Inject
-    public DataManager(WanAndroidService wanAndroidService, DatabaseHelper databaseHelper) {
-        this.wanAndroidService = wanAndroidService;
-        this.databaseHelper = databaseHelper;
+    public DataManager(ApiService apiService, DBHelper DBHelper) {
+        this.mApiService = apiService;
+        this.mDBHelper = DBHelper;
     }
 
     public Observable<BaseResponse<List<Banner>>> getBannerData() {
-        return wanAndroidService.getBannerData();
+        return mApiService.getBannerData();
     }
 
     public Observable<BaseResponse<ArticleListResponse>> getArticles(int page) {
-        return wanAndroidService.getArticles(page);
+        return mApiService.getArticles(page);
     }
 
     public Observable<BaseResponse<List<Category>>> getProjectCategories() {
-        return wanAndroidService.getProjectCategories();
+        return mApiService.getProjectCategories();
     }
 
     public Observable<BaseResponse<ArticleListResponse>> getProjectArticles(int page, int cid) {
-        return wanAndroidService.getProjectArticles(page, cid);
+        return mApiService.getProjectArticles(page, cid);
     }
 
     public Observable<BaseResponse<List<Category>>> getHierarchyCategories() {
-        return wanAndroidService.getHierarchyCategories();
+        return mApiService.getHierarchyCategories();
     }
 
     public Observable<BaseResponse<ArticleListResponse>> getHierarchyArticles(int page, int cid) {
-        return wanAndroidService.getHierarchyArticles(page, cid);
+        return mApiService.getHierarchyArticles(page, cid);
     }
 
     public Observable<BaseResponse<List<NavCategory>>> getNavCategories() {
-        return wanAndroidService.getNavCategories();
+        return mApiService.getNavCategories();
     }
 
     public Observable<BaseResponse<List<HotKey>>> getHotKey() {
-        return wanAndroidService.getHotKey();
+        return mApiService.getHotKey();
     }
 
     public Observable<BaseResponse<ArticleListResponse>> searchArticles(int page, String keyword) {
-        return wanAndroidService.searchArticles(page, keyword);
+        return mApiService.searchArticles(page, keyword);
     }
 
     public Observable<BaseResponse<LoginResponse>> signin(String username, String password) {
-        return wanAndroidService.signin(username, password);
+        return mApiService.signin(username, password);
     }
 
     public Observable<BaseResponse<LoginResponse>> signup(
             String username, String password, String repassword) {
-        return wanAndroidService.signup(username, password, repassword);
+        return mApiService.signup(username, password, repassword);
     }
 
     public void saveLoggedInUser(String username, String password, boolean isLogin) {
-        databaseHelper.saveLoggedInUser(username, password, isLogin);
+        mDBHelper.saveLoggedInUser(username, password, isLogin);
     }
 
     public User getLoggedInUser() {
-        return databaseHelper.getLoggedInUser();
+        return mDBHelper.getLoggedInUser();
     }
 
     public boolean isLogin() {
-        return databaseHelper.isLogin();
+        return mDBHelper.isLogin();
     }
 
     public void deleteLoggedInUser() {
-        databaseHelper.deleteLoggedInUser();
+        mDBHelper.deleteLoggedInUser();
     }
 
     public void saveSearchHistory(String keyword) {
-        databaseHelper.saveSearchHistory(keyword);
+        mDBHelper.saveSearchHistory(keyword);
     }
 
     public List<SearchHistory> querySearchHistory() {
-        return databaseHelper.querySearchHistory();
+        return mDBHelper.querySearchHistory();
     }
 
     public void deleteSearchHistory() {
-        databaseHelper.deleteSearchHistory();
+        mDBHelper.deleteSearchHistory();
     }
 }

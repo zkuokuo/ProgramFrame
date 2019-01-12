@@ -1,7 +1,6 @@
 package com.nibiru.programframe.dag.module;
 
-import com.nibiru.programframe.data.source.netdata.WanAndroidService;
-import com.nibiru.programframe.ui.scenes.MyApplication;
+import com.nibiru.programframe.data.source.netdata.ApiService;
 import com.nibiru.programframe.utils.Constants;
 
 import java.util.concurrent.TimeUnit;
@@ -15,22 +14,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import x.core.GlobalApplication;
 
 @Module
 public class ApplicationModule {
-    private GlobalApplication application;
-
-    public ApplicationModule(MyApplication application) {
-        this.application = application;
-    }
-
-    @Provides
-    @Singleton
-    GlobalApplication provideApplication() {
-        return application;
-    }
-
     @Provides
     @Singleton
     Retrofit provideRetrofit() {
@@ -54,7 +40,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    WanAndroidService provideWanAndroidService(Retrofit retrofit) {
-        return retrofit.create(WanAndroidService.class);
+    ApiService provideWanAndroidService(Retrofit retrofit) {
+        return retrofit.create(ApiService.class);
     }
 }

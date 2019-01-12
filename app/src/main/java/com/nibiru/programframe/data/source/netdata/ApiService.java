@@ -18,7 +18,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public interface WanAndroidService {
+public interface ApiService {
 
 
 	// 获取首页文章数据
