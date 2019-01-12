@@ -19,6 +19,8 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface WanAndroidService {
+
+
 	// 获取首页文章数据
 	@GET("article/list/{page}/json")
 	Observable<BaseResponse<ArticleListResponse>> getArticles(@Path("page") int page);
