@@ -10,4 +10,6 @@ import dagger.Component;
 @Component(modules = SceneModule.class, dependencies = ApplicationComponent.class)
 public interface SceneComponent {
     void inject(MainScene mainScene);
+
+
 }
