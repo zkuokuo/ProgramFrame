@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EngineLib/EngineLib.iml" filepath="$PROJECT_DIR$/EngineLib/EngineLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EngineLib/EngineLib.iml" filepath="$PROJECT_DIR$/EngineLib/EngineLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProgramFrame.iml" filepath="$PROJECT_DIR$/ProgramFrame.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProgramFrame.iml" filepath="$PROJECT_DIR$/ProgramFrame.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dagger2demo/dagger2demo.iml" filepath="$PROJECT_DIR$/dagger2demo/dagger2demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger2demo/dagger2demo.iml" filepath="$PROJECT_DIR$/dagger2demo/dagger2demo.iml" />
     </modules>
   </component>
