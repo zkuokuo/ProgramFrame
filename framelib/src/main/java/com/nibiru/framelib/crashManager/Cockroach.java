@@ -6,7 +6,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import android.util.Log;
+
+import com.nibiru.framelib.utils.MLog;
 
 import java.lang.reflect.Field;
 
@@ -29,7 +30,7 @@ public final class Cockroach {
         Cockroach.install(new ExceptionHandler() {
             @Override
             protected void onUncaughtExceptionHappened(Thread thread, final Throwable throwable) {
-                Log.e("AndroidRuntime", "--->onUncaughtExceptionHappened:" + thread + "<---", throwable);
+                MLog.e("AndroidRuntime", "--->onUncaughtExceptionHappened:" + thread + "<---", throwable);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -43,20 +44,20 @@ public final class Cockroach {
 
             @Override
             protected void onBandageExceptionHappened(Throwable throwable) {
-                throwable.printStackTrace();//打印警告级别log，该throwable可能是最开始的bug导致的，无需关心
-                Log.d("zkk", "onBandageExceptionHappened: -------");
+                throwable.printStackTrace();//打印警告级别MLog，该throwable可能是最开始的bug导致的，无需关心
+                MLog.d("zkk", "onBandageExceptionHappened: -------");
             }
 
             @Override
             protected void onEnterSafeMode() {
-                Log.d("zkk", "onEnterSafeMode: -------");
+                MLog.d("zkk", "onEnterSafeMode: -------");
             }
 
             @Override
             protected void onMayBeBlackScreen(Throwable e) {
                 Thread thread = Looper.getMainLooper().getThread();
                 CrashUtils.dumpExceptionToSDCard(e, context);
-                Log.e("AndroidRuntime", "--->onUncaughtExceptionHappened:" + thread + "<---", e);
+                MLog.e("AndroidRuntime", "--->onUncaughtExceptionHappened:" + thread + "<---", e);
                 //黑屏时建议直接杀死app
                 //延时1秒杀死进程
                 SystemClock.sleep(1000);

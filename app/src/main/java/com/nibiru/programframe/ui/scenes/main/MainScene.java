@@ -3,7 +3,10 @@ package com.nibiru.programframe.ui.scenes.main;
 import android.graphics.Color;
 
 import com.nibiru.programframe.ui.base.BaseScene;
+import com.nibiru.programframe.ui.scenes.main.view.MainView;
 import com.nibiru.programframe.utils.CalculateUtils;
+
+import javax.inject.Inject;
 
 import x.core.listener.IXActorEventListener;
 import x.core.ui.XActor;
@@ -18,12 +21,15 @@ import x.core.ui.XImageText;
 public class MainScene extends BaseScene<MainPresenter> implements MainContract.NewScene, IXActorEventListener {
     String[] titles = new String[]{"添加", "查询",};
     String[] names = new String[]{"showArticles", "showBannerData",};
+    @Inject
+    MainView mMainView;
 
     @Override
     public void onCreate() {
         super.onCreate();
         mSceneComponent.inject(this);
         presenter.attachScene(this);
+        mMainView.attachScene(this).init(this);
         initview();
     }
 
@@ -55,11 +61,12 @@ public class MainScene extends BaseScene<MainPresenter> implements MainContract.
 
     @Override
     public boolean onGazeTrigger(XActor xActor) {
-
         String name = xActor.getName();
         if (name.equals("showArticles")) {
+
             return true;
         } else if (name.equals("showBannerData")) {
+
             return true;
         }
 

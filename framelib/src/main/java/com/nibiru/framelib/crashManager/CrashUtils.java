@@ -21,7 +21,6 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -36,7 +35,6 @@ import java.util.List;
 import java.util.Map;
 
 public final class CrashUtils {
-
     //文件夹目录
     private static final String PATH = Environment.getExternalStorageDirectory().getPath() + "/crash_log/";
     //文件名
@@ -105,6 +103,9 @@ public final class CrashUtils {
             pw.close();
         } catch (Exception e) {
 
+        }
+        if (CrashUtils.detectNetisAvailable(mContext)) {
+            EmailSender.sendEMail(tempfilename, mContext);
         }
     }
 

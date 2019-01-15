@@ -33,7 +33,6 @@ public class FollowUtil {
      */
     private void init() {
         bg = new XImage("transparent.png");
-//        bg = new XImage("app_11.png");
         bg.setSize(CalculateUtils.transformSize(2600), CalculateUtils.transformSize(2000));
         bg.setCenterPosition(0, 0, Constants.CENTER_Z_BG - 0.2f);
         bg.setEventListener(new IXActorEventListener() {
@@ -78,7 +77,7 @@ public class FollowUtil {
     }
 
     private void checkFollowGazeState() {
-//        if (!Constants.isOpenFollow) {
+//        if (!FrameConstants.isOpenFollow) {
 //            onDestory();
 //            return;
 //        }
@@ -117,7 +116,7 @@ public class FollowUtil {
      */
 //    public boolean click_ok_stop_flolow(int keyCode) {
 //        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
-//            Constants.isOpenFollow = !Constants.isOpenFollow;
+//            FrameConstants.isOpenFollow = !FrameConstants.isOpenFollow;
 //            return true;
 //        }
 //        return false;

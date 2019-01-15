@@ -113,7 +113,6 @@ public class EmailSender {
         //关闭连接
         transport.close();
     }
-
     /**
      * 发邮件给我
      */
@@ -126,14 +125,14 @@ public class EmailSender {
                     //设置服务器地址和端口，网上搜的到
                     sender.setProperties("smtp.163.com", "25");
                     //分别设置发件人，邮件标题和文本内容
-                    sender.setMessage("@163.com", getAppName(context) + "CrashLog", "log");
+                    sender.setMessage("15671555534@163.com", getAppName(context) + "CrashLog", "log");
                     //设置收件人
                     sender.setReceiver(new String[]{"dick.zhang@inibiru.com"});
                     //添加附件
                     //这个附件的路径是我手机里的啊，要发你得换成你手机里正确的路径
                     sender.addAttachment(path);
                     //发送邮件,服务器地址,发件人,和登录密码或者授权码
-                    sender.sendEmail("smtp.163.com", "@163.com", "");
+                    sender.sendEmail("smtp.163.com", "15671555534@163.com", "a262877");
                 } catch (AddressException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

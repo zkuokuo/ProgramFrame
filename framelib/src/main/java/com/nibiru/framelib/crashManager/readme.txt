@@ -1,0 +1,5 @@
+这个是可以把应用crash相关的log保存到本地crash_log文件夹下面
+同时会向一个邮箱发送相关的log
+
+ 使用的方法如下:简单一句话就能达到自己想要的效果.
+ Cockroach.installCockroach(context);

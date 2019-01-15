@@ -77,5 +77,5 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile project(':framelib')
     compile project(':EngineLib')
-//    compile(name: 'framelib-release-1.0', ext: 'aar')
+//    compile(name: 'framelib-1.0.0', ext: 'aar')
 }

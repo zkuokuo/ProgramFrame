@@ -18,8 +18,6 @@ import x.core.GlobalApplication;
 public class MyApplication extends GlobalApplication {
     private ApplicationComponent applicationComponent;
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -31,6 +29,7 @@ public class MyApplication extends GlobalApplication {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         Realm.setDefaultConfiguration(realmConfiguration);
+        //异常发邮件同时把log保存到本地
         Cockroach.installCockroach(context);
     }
 
