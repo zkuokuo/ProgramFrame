@@ -1,14 +1,8 @@
 package com.nibiru.programframe.data.source;
 
-import com.nibiru.programframe.data.model.ArticleListResponse;
-import com.nibiru.programframe.data.model.Banner;
-import com.nibiru.programframe.data.model.BaseResponse;
-import com.nibiru.programframe.data.model.Category;
-import com.nibiru.programframe.data.model.HotKey;
-import com.nibiru.programframe.data.model.LoginResponse;
-import com.nibiru.programframe.data.model.NavCategory;
-import com.nibiru.programframe.data.model.SearchHistory;
-import com.nibiru.programframe.data.model.User;
+import com.nibiru.programframe.data.model.AppDetailData;
+import com.nibiru.programframe.data.model.FavBaseResponse;
+import com.nibiru.programframe.data.model.VideoData;
 import com.nibiru.programframe.data.source.dbdata.DBHelper;
 import com.nibiru.programframe.data.source.netdata.ApiService;
 
@@ -18,6 +12,12 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
+
+import static com.nibiru.programframe.data.source.netdata.BaseUrlConfig.channel;
+import static com.nibiru.programframe.data.source.netdata.BaseUrlConfig.domin_url;
+import static com.nibiru.programframe.data.source.netdata.BaseUrlConfig.login_pkg;
+import static com.nibiru.programframe.data.source.netdata.BaseUrlConfig.pkg;
+import static com.nibiru.programframe.data.source.netdata.BaseUrlConfig.version;
 
 @Singleton
 public class DataManager {
@@ -30,76 +30,43 @@ public class DataManager {
         this.mDBHelper = DBHelper;
     }
 
-    public Observable<BaseResponse<List<Banner>>> getBannerData() {
-        return mApiService.getBannerData();
+    public Observable<FavBaseResponse<List<VideoData>>> getFavVideoData(String token) {
+        return mApiService.getFavVideoData(version, channel, token, login_pkg, pkg, domin_url);
     }
 
-    public Observable<BaseResponse<ArticleListResponse>> getArticles(int page) {
-        return mApiService.getArticles(page);
+    public Observable<FavBaseResponse<List<AppDetailData>>> getFavAppData(String token) {
+        return mApiService.getFavAppData(version, channel, token, login_pkg, pkg,
+                domin_url, "1");
     }
 
-    public Observable<BaseResponse<List<Category>>> getProjectCategories() {
-        return mApiService.getProjectCategories();
+    public Observable<FavBaseResponse> unFavVideoState(String token, int id) {
+        return mApiService.unFavVideoState(version, channel, token, login_pkg, pkg, "" + id);
     }
 
-    public Observable<BaseResponse<ArticleListResponse>> getProjectArticles(int page, int cid) {
-        return mApiService.getProjectArticles(page, cid);
+    public Observable<FavBaseResponse> unFavAppState(String token, int id) {
+        return mApiService.unFavAppState(version, channel, token, login_pkg, pkg, "" + id, "1");
     }
 
-    public Observable<BaseResponse<List<Category>>> getHierarchyCategories() {
-        return mApiService.getHierarchyCategories();
-    }
 
-    public Observable<BaseResponse<ArticleListResponse>> getHierarchyArticles(int page, int cid) {
-        return mApiService.getHierarchyArticles(page, cid);
-    }
-
-    public Observable<BaseResponse<List<NavCategory>>> getNavCategories() {
-        return mApiService.getNavCategories();
-    }
-
-    public Observable<BaseResponse<List<HotKey>>> getHotKey() {
-        return mApiService.getHotKey();
-    }
-
-    public Observable<BaseResponse<ArticleListResponse>> searchArticles(int page, String keyword) {
-        return mApiService.searchArticles(page, keyword);
-    }
-
-    public Observable<BaseResponse<LoginResponse>> signin(String username, String password) {
-        return mApiService.signin(username, password);
-    }
-
-    public Observable<BaseResponse<LoginResponse>> signup(
-            String username, String password, String repassword) {
-        return mApiService.signup(username, password, repassword);
-    }
-
-    public void saveLoggedInUser(String username, String password, boolean isLogin) {
-        mDBHelper.saveLoggedInUser(username, password, isLogin);
-    }
-
-    public User getLoggedInUser() {
-        return mDBHelper.getLoggedInUser();
-    }
-
-    public boolean isLogin() {
-        return mDBHelper.isLogin();
-    }
-
-    public void deleteLoggedInUser() {
-        mDBHelper.deleteLoggedInUser();
-    }
-
-    public void saveSearchHistory(String keyword) {
-        mDBHelper.saveSearchHistory(keyword);
-    }
-
-    public List<SearchHistory> querySearchHistory() {
-        return mDBHelper.querySearchHistory();
-    }
-
-    public void deleteSearchHistory() {
-        mDBHelper.deleteSearchHistory();
-    }
+//    public void saveLoggedInUser(String username, String password, boolean isLogin) {
+//        mDBHelper.saveLoggedInUser(username, password, isLogin);
+//    }
+//
+//
+//    public boolean isLogin() {
+//        return mDBHelper.isLogin();
+//    }
+//
+//    public void deleteLoggedInUser() {
+//        mDBHelper.deleteLoggedInUser();
+//    }
+//
+//    public void saveSearchHistory(String keyword) {
+//        mDBHelper.saveSearchHistory(keyword);
+//    }
+//
+//
+//    public void deleteSearchHistory() {
+//        mDBHelper.deleteSearchHistory();
+//    }
 }

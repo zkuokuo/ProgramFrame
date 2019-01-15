@@ -1,7 +1,5 @@
 package com.nibiru.programframe.ui.base;
 
-import android.util.Log;
-
 import com.nibiru.programframe.dag.component.DaggerSceneComponent;
 import com.nibiru.programframe.dag.component.SceneComponent;
 import com.nibiru.programframe.ui.scenes.MyApplication;
@@ -53,6 +51,6 @@ public abstract class BaseScene<P extends BaseContract.Presenter> extends XBaseS
 
     @Override
     public void showError(String message) {
-        Log.d("zkk", message);
+
     }
 }

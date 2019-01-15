@@ -64,6 +64,30 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/libvlc">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="svn://121.40.20.229/Nibiru/%E8%AE%BE%E7%BD%AEjar%E5%8C%85" />
+                  <option value="svn://121.40.20.229/Nibiru/NbkInstaller" />
+                  <option value="svn://121.40.20.229/Nibiru/NibiruPlayerForTRMP" />
+                  <option value="svn://121.40.20.229/Nibiru/NibiruSettingsEngine3.2_ZDNMS" />
+                  <option value="svn://121.40.20.229/Nibiru/Unity" />
+                  <option value="svn://121.40.20.229/Nibiru/UnitySDK" />
+                  <option value="svn://121.40.20.229/Nibiru/VRShow_VR" />
+                  <option value="svn://121.40.20.229/Nibiru/Windows" />
+                  <option value="svn://121.40.20.229/Nibiru/WindowsSDK" />
+                  <option value="svn://121.40.20.229/Nibiru/branches" />
+                  <option value="svn://121.40.20.229/Nibiru/iOS" />
+                  <option value="svn://121.40.20.229/Nibiru/tags" />
+                  <option value="svn://121.40.20.229/Nibiru/test" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="svn://121.40.20.229/Nibiru/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="mySupportsUserInfoFilter" value="true" />

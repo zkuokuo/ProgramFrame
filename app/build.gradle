@@ -1,20 +1,52 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
 android {
-    compileSdkVersion 22
+    signingConfigs {
+        nibiru {
+            keyAlias 'nibiru'
+            keyPassword 'nibiru2016'
+            storeFile file('F:/keyStore/rom_app.keystore')
+            storePassword 'nibiru2016'
+        }
+    }
+    compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.nibiru.programframe"
-        minSdkVersion 21
+        minSdkVersion 25
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            signingConfig signingConfigs.nibiru
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+//            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+//            //签名
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "NibiruFavXengine2.0_v${defaultConfig.versionName}_${releaseTime()}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
         }
     }
     repositories {
@@ -25,11 +57,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':EngineLib')
+    compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
     compile 'com.google.dagger:dagger:2.16'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
@@ -40,4 +73,8 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile files('libs/pinyin4j-2.5.0.jar')
+    compile project(':libvlc')
+    compile files('libs/mail.jar')
+    compile files('libs/activation.jar')
 }
