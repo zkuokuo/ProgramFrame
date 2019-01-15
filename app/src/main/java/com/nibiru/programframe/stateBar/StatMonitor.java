@@ -15,12 +15,11 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
+import com.nibiru.framelib.utils.MLog;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import nibiru.LogManager.LogUtil;
 
 public class StatMonitor {
 
@@ -190,14 +189,14 @@ public class StatMonitor {
 
     @SuppressLint("NewApi")
     private void handleTFState() {
-        LogUtil.d("" + mDeviceManager.getSdDevicesList());
+        MLog.d("" + mDeviceManager.getSdDevicesList());
         if (mDeviceManager.getSdDevicesList() != null && mDeviceManager.getSdDevicesList().size() != 0) {
             for (int i = 0; i < mDeviceManager.getSdDevicesList().size(); i++) {
                 if (android.os.Environment.getStorageState(new File(mDeviceManager.getSdDevicesList().get(i))).equals(
                         android.os.Environment.MEDIA_MOUNTED) && !mDeviceManager.getSdDevicesList
                         ().get(i).contains("internal_sd")) {
                     if (listener != null && listener.size() > 0) {
-                        LogUtil.d("handleTFState: " + true);
+                        MLog.d("handleTFState: " + true);
                         for (OnStatChangeListener lis : listener) {
                             lis.onTFStateChanged(true);
                         }
@@ -207,7 +206,7 @@ public class StatMonitor {
             }
         }
         if (listener != null && listener.size() > 0) {
-            LogUtil.d("handleTFState: " + false);
+            MLog.d("handleTFState: " + false);
             for (OnStatChangeListener lis : listener) {
                 lis.onTFStateChanged(false);
             }

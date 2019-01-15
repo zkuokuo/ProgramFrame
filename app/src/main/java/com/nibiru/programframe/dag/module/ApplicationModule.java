@@ -1,7 +1,7 @@
 package com.nibiru.programframe.dag.module;
 
 import com.nibiru.programframe.data.source.netdata.ApiService;
-import com.nibiru.programframe.utils.Constants;
+import com.nibiru.programframe.data.source.netdata.BaseUrlConfig;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +30,7 @@ public class ApplicationModule {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
+                .baseUrl(BaseUrlConfig.urlFav)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

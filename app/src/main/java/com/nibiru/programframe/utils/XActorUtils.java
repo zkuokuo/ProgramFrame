@@ -3,6 +3,8 @@ package com.nibiru.programframe.utils;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 
+import com.nibiru.framelib.utils.OperateBitmapUtil;
+
 import x.core.listener.IXActorKeyEventListener;
 import x.core.ui.XEditText;
 import x.core.ui.XImage;

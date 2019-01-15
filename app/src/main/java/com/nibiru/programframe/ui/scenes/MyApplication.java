@@ -1,5 +1,6 @@
 package com.nibiru.programframe.ui.scenes;
 
+import com.nibiru.framelib.crashManager.Cockroach;
 import com.nibiru.programframe.dag.component.ApplicationComponent;
 import com.nibiru.programframe.dag.component.DaggerApplicationComponent;
 
@@ -17,6 +18,8 @@ import x.core.GlobalApplication;
 public class MyApplication extends GlobalApplication {
     private ApplicationComponent applicationComponent;
 
+
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -28,6 +31,7 @@ public class MyApplication extends GlobalApplication {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         Realm.setDefaultConfiguration(realmConfiguration);
+        Cockroach.installCockroach(context);
     }
 
     public ApplicationComponent getApplicationComponent() {

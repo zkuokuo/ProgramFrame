@@ -11,7 +11,9 @@
             <option value="$PROJECT_DIR$/EngineLib" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dagger2demo" />
+            <option value="$PROJECT_DIR$/framelib" />
             <option value="$PROJECT_DIR$/libvlc" />
+            <option value="$PROJECT_DIR$/nibiruFFmpegMediaRetriever" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

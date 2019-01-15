@@ -1,1 +1,1 @@
-include ':app', ':EngineLib', ':dagger2demo', ':libvlc'
+include ':app', ':EngineLib', ':dagger2demo', ':libvlc', ':framelib', ':nibiruFFmpegMediaRetriever'

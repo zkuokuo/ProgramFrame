@@ -1,14 +1,9 @@
 package com.nibiru.programframe.ui.scenes.main;
 
 import android.graphics.Color;
-import android.util.Log;
 
-import com.nibiru.programframe.data.model.Article;
-import com.nibiru.programframe.data.model.Banner;
 import com.nibiru.programframe.ui.base.BaseScene;
 import com.nibiru.programframe.utils.CalculateUtils;
-
-import java.util.List;
 
 import x.core.listener.IXActorEventListener;
 import x.core.ui.XActor;
@@ -49,17 +44,6 @@ public class MainScene extends BaseScene<MainPresenter> implements MainContract.
     }
 
     @Override
-    public void showArticles(int page, List<Article> data) {
-        Log.d("zkk", "showArticles: ----page--" + page + "---data==" + data.size());
-    }
-
-    @Override
-    public void showBannerData(List<Banner> data) {
-        Log.d("zkk", "showBannerData:  ====data==" + data.size());
-    }
-
-
-    @Override
     public void onGazeEnter(XActor xActor) {
 
     }
@@ -74,10 +58,8 @@ public class MainScene extends BaseScene<MainPresenter> implements MainContract.
 
         String name = xActor.getName();
         if (name.equals("showArticles")) {
-            presenter.getArticles(1);
             return true;
         } else if (name.equals("showBannerData")) {
-            presenter.getBannerData();
             return true;
         }
 

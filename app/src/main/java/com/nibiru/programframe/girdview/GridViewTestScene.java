@@ -1,10 +1,8 @@
 package com.nibiru.programframe.girdview;
 
-import com.nibiru.programframe.utils.MLog;
-
+import com.nibiru.framelib.utils.MLog;
 import java.util.ArrayList;
 import java.util.List;
-
 import x.core.listener.IXActorEventListener;
 import x.core.ui.XActor;
 import x.core.ui.XImageText;

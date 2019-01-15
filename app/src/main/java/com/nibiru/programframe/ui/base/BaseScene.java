@@ -1,12 +1,10 @@
 package com.nibiru.programframe.ui.base;
 
+import com.nibiru.framelib.utils.NetworkUtils;
 import com.nibiru.programframe.dag.component.DaggerSceneComponent;
 import com.nibiru.programframe.dag.component.SceneComponent;
 import com.nibiru.programframe.ui.scenes.MyApplication;
-import com.nibiru.programframe.utils.NetworkUtils;
-
 import javax.inject.Inject;
-
 import x.core.ui.XBaseScene;
 
 /**

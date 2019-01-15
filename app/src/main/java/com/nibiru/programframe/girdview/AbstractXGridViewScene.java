@@ -2,7 +2,6 @@ package com.nibiru.programframe.girdview;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import x.core.listener.IXActorKeyEventListener;
 import x.core.ui.XActor;
 import x.core.ui.XBaseScene;
