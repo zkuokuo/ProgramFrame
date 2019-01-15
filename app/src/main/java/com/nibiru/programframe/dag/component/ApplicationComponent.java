@@ -13,6 +13,4 @@ import dagger.Component;
 public interface ApplicationComponent {
     DBHelper dbHelper();
     DataManager dataManager();
-
-
 }
