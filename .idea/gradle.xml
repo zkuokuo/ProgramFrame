@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/framelib" />
             <option value="$PROJECT_DIR$/libvlc" />
             <option value="$PROJECT_DIR$/nibiruFFmpegMediaRetriever" />
+            <option value="$PROJECT_DIR$/realmdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
