@@ -17,9 +17,6 @@ import java.util.Map;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2017/12/15
  *     desc  : utils about reflect
  * </pre>
  */

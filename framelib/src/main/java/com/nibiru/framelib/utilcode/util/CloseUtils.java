@@ -5,9 +5,6 @@ import java.io.IOException;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/10/09
  *     desc  : utils about close
  * </pre>
  */

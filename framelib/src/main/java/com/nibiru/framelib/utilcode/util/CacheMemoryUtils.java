@@ -10,9 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2017/05/24
  *     desc  : utils about memory cache
  * </pre>
  */

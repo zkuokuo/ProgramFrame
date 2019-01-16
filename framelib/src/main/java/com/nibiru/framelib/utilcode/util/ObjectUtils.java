@@ -15,9 +15,6 @@ import java.util.Map;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2017/12/24
  *     desc  : utils about object
  * </pre>
  */

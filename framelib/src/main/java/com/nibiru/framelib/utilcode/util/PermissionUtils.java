@@ -26,9 +26,6 @@ import java.util.Set;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2017/12/29
  *     desc  : utils about permission
  * </pre>
  */

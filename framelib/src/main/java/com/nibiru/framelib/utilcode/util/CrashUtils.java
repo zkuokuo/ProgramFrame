@@ -28,9 +28,6 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/09/27
  *     desc  : utils about crash
  * </pre>
  */

@@ -5,9 +5,6 @@ import android.os.Environment;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2018/04/15
  *     desc  : utils about path
  * </pre>
  */

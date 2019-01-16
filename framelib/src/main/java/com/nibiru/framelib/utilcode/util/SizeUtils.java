@@ -8,9 +8,6 @@ import android.view.ViewGroup;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/08/02
  *     desc  : utils about size
  * </pre>
  */
