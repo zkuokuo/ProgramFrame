@@ -10,10 +10,10 @@ import javax.inject.Inject;
  */
 
 public class Huotuichang {
+
     @Inject
     public Huotuichang() {
     }
-
 
     @Override
     public String toString() {

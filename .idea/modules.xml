@@ -7,9 +7,11 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger2demo/dagger2demo.iml" filepath="$PROJECT_DIR$/dagger2demo/dagger2demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/framelib/framelib.iml" filepath="$PROJECT_DIR$/framelib/framelib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framelib/framelib.iml" filepath="$PROJECT_DIR$/framelib/framelib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libvlc/libvlc.iml" filepath="$PROJECT_DIR$/libvlc/libvlc.iml" />
       <module fileurl="file://$PROJECT_DIR$/libvlc/libvlc.iml" filepath="$PROJECT_DIR$/libvlc/libvlc.iml" />
       <module fileurl="file://$PROJECT_DIR$/nibiruFFmpegMediaRetriever/nibiruFFmpegMediaRetriever.iml" filepath="$PROJECT_DIR$/nibiruFFmpegMediaRetriever/nibiruFFmpegMediaRetriever.iml" />
-      <module fileurl="file://$PROJECT_DIR$/realmdemo/realmdemo.iml" filepath="$PROJECT_DIR$/realmdemo/realmdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nibiruFFmpegMediaRetriever/nibiruFFmpegMediaRetriever.iml" filepath="$PROJECT_DIR$/nibiruFFmpegMediaRetriever/nibiruFFmpegMediaRetriever.iml" />
     </modules>
   </component>
 </project>

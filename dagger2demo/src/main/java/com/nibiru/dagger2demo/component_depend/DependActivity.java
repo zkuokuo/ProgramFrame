@@ -30,12 +30,9 @@ public class DependActivity extends Activity {
         setContentView(R.layout.activity_main);
         XiaoChiComponent xiaoChiComponent = DaggerXiaoChiComponent.builder().build();
         DaggerFoodComponent.builder().xiaoChiComponent(xiaoChiComponent).build().inject(this);
-
     }
 
     public void click(View view) {
         Toast.makeText(this, mBaozi.toString() + "---" + mNoodle.toString() + "---" + mHuotuichang.toString() + "---" + mGuazi.toString(), Toast.LENGTH_SHORT).show();
-
     }
-
 }
