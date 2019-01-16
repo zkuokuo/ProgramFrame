@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\GitDownload\ProgramFrame\libvlc\assets"/><source path="F:\GitDownload\ProgramFrame\libvlc\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="F:\GitDownload\ProgramFrame\libvlc\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\zkk\ProgramFrame\libvlc\assets"/><source path="E:\zkk\ProgramFrame\libvlc\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\zkk\ProgramFrame\libvlc\src\debug\assets"/></dataSet></merger>

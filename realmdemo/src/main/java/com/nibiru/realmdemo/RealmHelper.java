@@ -9,7 +9,6 @@ import com.nibiru.realmdemo.model.User;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import io.realm.Realm;
@@ -22,6 +21,18 @@ import io.realm.Sort;
  * 公司:nibiru
  * 时间:2017/10/13
  * 描述:单例设计模式
+ * *author:
+ *       ___            ___
+ *      /__/|          /__/|
+ *     |  |:|         |  |:|
+ *     |  |:|         |  |:|
+ *   __|  |:|       __|  |:|
+ *  /__/\_|:|____  /__/\_|:|____
+ *  \  \:\/:::::/  \  \:\/:::::/
+ *   \  \::/~~~~    \  \::/~~~~
+ *    \  \:\         \  \:\
+ *     \  \:\         \  \:\
+ *      \__\/          \__\/
  */
 
 public class RealmHelper {
